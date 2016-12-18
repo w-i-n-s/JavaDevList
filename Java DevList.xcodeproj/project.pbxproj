@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		03968BB8EE63D148F0423541 /* libPods-App Blue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FF1C1FBF925FF74FB536D1 /* libPods-App Blue.a */; };
+		2A1FACA31E06F54400C9497D /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1FACA21E06F54300C9497D /* UserTableViewCell.m */; };
+		2A1FACA41E06F54A00C9497D /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1FACA21E06F54300C9497D /* UserTableViewCell.m */; };
 		2A2EB7EC1E0693FF00A43F5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7EB1E0693FF00A43F5E /* main.m */; };
 		2A2EB7EF1E0693FF00A43F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7EE1E0693FF00A43F5E /* AppDelegate.m */; };
 		2A2EB7F21E0693FF00A43F5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F11E0693FF00A43F5E /* ViewController.m */; };
@@ -21,14 +23,14 @@
 		2A2EB80A1E06A01100A43F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F81E06940000A43F5E /* LaunchScreen.storyboard */; };
 		2A2EB80B1E06A01100A43F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F61E06940000A43F5E /* Assets.xcassets */; };
 		2A2EB80C1E06A01100A43F5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F31E0693FF00A43F5E /* Main.storyboard */; };
-		2A9BF9E61E06D06900E57F49 /* Info Black.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7FB1E06940000A43F5E /* Info Black.plist */; };
-		2A9BF9E71E06D06D00E57F49 /* Info Blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB8141E06A2F200A43F5E /* Info Blue.plist */; };
 		2BFDF3DEC17EEE805F6BA398 /* libPods-App Black.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A73A7D37748E6F13F1E412F /* libPods-App Black.a */; };
 		89E7C41C658D585F8E346AF8 /* libPods-Java DevList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA12CCD6C3DA99844F04766 /* libPods-Java DevList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FA12CCD6C3DA99844F04766 /* libPods-Java DevList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Java DevList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1FACA11E06F54300C9497D /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		2A1FACA21E06F54300C9497D /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		2A2EB7E71E0693FF00A43F5E /* App Black.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Black.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2EB7EB1E0693FF00A43F5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A2EB7ED1E0693FF00A43F5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +109,8 @@
 				2A2EB7EE1E0693FF00A43F5E /* AppDelegate.m */,
 				2A2EB7F01E0693FF00A43F5E /* ViewController.h */,
 				2A2EB7F11E0693FF00A43F5E /* ViewController.m */,
+				2A1FACA11E06F54300C9497D /* UserTableViewCell.h */,
+				2A1FACA21E06F54300C9497D /* UserTableViewCell.m */,
 				2A2EB7F31E0693FF00A43F5E /* Main.storyboard */,
 				2A2EB7F61E06940000A43F5E /* Assets.xcassets */,
 				2A2EB7F81E06940000A43F5E /* LaunchScreen.storyboard */,
@@ -224,7 +228,6 @@
 			files = (
 				2A2EB7FA1E06940000A43F5E /* LaunchScreen.storyboard in Resources */,
 				2A2EB7F71E06940000A43F5E /* Assets.xcassets in Resources */,
-				2A9BF9E61E06D06900E57F49 /* Info Black.plist in Resources */,
 				2A2EB7F51E0693FF00A43F5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,7 +237,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A2EB80A1E06A01100A43F5E /* LaunchScreen.storyboard in Resources */,
-				2A9BF9E71E06D06D00E57F49 /* Info Blue.plist in Resources */,
 				2A2EB80B1E06A01100A43F5E /* Assets.xcassets in Resources */,
 				2A2EB80C1E06A01100A43F5E /* Main.storyboard in Resources */,
 			);
@@ -340,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1FACA31E06F54400C9497D /* UserTableViewCell.m in Sources */,
 				2A2EB7F21E0693FF00A43F5E /* ViewController.m in Sources */,
 				2A2EB7EF1E0693FF00A43F5E /* AppDelegate.m in Sources */,
 				2A2EB7EC1E0693FF00A43F5E /* main.m in Sources */,
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1FACA41E06F54A00C9497D /* UserTableViewCell.m in Sources */,
 				2A2EB8041E06A01100A43F5E /* ViewController.m in Sources */,
 				2A2EB8051E06A01100A43F5E /* AppDelegate.m in Sources */,
 				2A2EB8061E06A01100A43F5E /* main.m in Sources */,

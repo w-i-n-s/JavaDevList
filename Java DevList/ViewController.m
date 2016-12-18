@@ -7,19 +7,34 @@
 //
 
 #import "ViewController.h"
+#import "UserTableViewCell.h"
+
 #import "AppDelegate.h"
 #import "AFNetworking.h"
+#import "NSArray+Cache.h"
 
-@interface ViewController ()
+#define kCacheUsersListKey @"CacheUsersListKey"
+
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) AFHTTPSessionManager *sessionManager;
+@property (strong, nonatomic) NSMutableArray *usersList;
+
 @property (weak, nonatomic) IBOutlet UIView *nonauthView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation ViewController
 
 #pragma mark - Lifecycle
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    NSArray *cachedArray = [[NSArray alloc] initArrayFromCacheWithKey:kCacheUsersListKey];
+    self.usersList = [NSMutableArray arrayWithArray:cachedArray];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,6 +44,10 @@
 #endif
     
     [self checkAuthStatus];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,6 +75,7 @@
 
 
 #pragma mark - Private
+#pragma mark Network
 
 - (AFHTTPSessionManager *)sessionManager {
     if (!_sessionManager) {
@@ -82,12 +102,10 @@
 }
 
 - (void)getUserList {
-//    NSString *urlString = [kFitbitApiPrefix stringByAppendingString:suffixString];
-    
-//    [[self sessionManager] GET:urlString
-    NSString *suffix = [NSString stringWithFormat:@"search/users?q=language:javascript"];
+    __weak __typeof(self)weakSelf = self;
+    NSString *suffix = [NSString stringWithFormat:@"search/users?q=language:javascript&per_page=10&page=0"];
     [self getDataFromAPIUsingRequestSuffixString:suffix completion:^(NSDictionary *responseObject) {
-        NSLog(@"");
+        [weakSelf addResultsFromList:responseObject[@"items"]];
         /*
         {
             "avatar_url" = "https://avatars.githubusercontent.com/u/110953?v=3";
@@ -131,23 +149,31 @@
 #ifdef DEBUG
         NSLog(@"error %@\n%@",error,dict);
 #endif
-//        if ([dict[@"errors"][0][@"errorType"] isEqualToString:@"expired_token"]) {
-//            [self renewFitBitToken];
-//        } else if ([dict[@"errors"][0][@"errorType"] isEqualToString:@"invalid_token"]){
-//            NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:kUserDefaultsSuiteName];
-//            NSString *code = [userDefaults objectForKey:kUserDefaultsFitbitCode];
-//            [self cleanFitBitToken];
-//            
-//            if (code) {
-//                [self getTokenUsingAuthCodeString:code completion:^(NSError *error) {
-//                    [self getAllFitBitDataInBackgroundMode:[SharedAppDelegate appInBackgroundMode]];
-//                }];
-//            }
-//        } else {
-//            NSLog(@"Error: %@", error);
-//        }
+
     }];
 }
 
+#pragma mark Fill results
 
+- (void)addResultsFromList:(NSArray *)array {
+    //TODO: parse to model
+    [self.usersList addObjectsFromArray:array];
+    [self.tableView reloadData];
+}
+
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.usersList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserTableViewCell" forIndexPath:indexPath];
+    cell.userDictionary = self.usersList[indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
 @end
