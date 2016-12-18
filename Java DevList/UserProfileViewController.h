@@ -1,8 +1,8 @@
 //
-//  UserTableViewCell.h
+//  UserProfileViewController.h
 //  Java DevList
 //
-//  Created by Sergey Vinogradov on 18.12.16.
+//  Created by Sergey Vinogradov on 19.12.16.
 //  Copyright © 2016 wins.konar@gmail.com. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 @class User;
 
-@interface UserTableViewCell : UITableViewCell
+@interface UserProfileViewController : UIViewController
 
 @property (strong, nonatomic) User *user;
 

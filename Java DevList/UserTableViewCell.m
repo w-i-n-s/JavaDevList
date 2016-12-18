@@ -8,6 +8,7 @@
 
 #import "UserTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "User.h"
 
 @interface UserTableViewCell ()
 
@@ -30,22 +31,21 @@
 }
 
 - (void)prepareForReuse {
-    _userDictionary = nil;
+    _user = nil;
     
     [self.avatarImageView sd_cancelCurrentImageLoad];
     self.avatarImageView.image = nil;
 }
 
-- (void)setUserDictionary:(NSDictionary *)userDictionary {
-    _userDictionary = userDictionary;
+- (void)setUser:(User *)user {
+    _user = user;
     
-    NSString *avatarUrsString = userDictionary[@"avatar_url"];
-    if (avatarUrsString) {
-        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarUrsString]];
+    if (user.avatarUrl) {
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:user.avatarUrl]];
     }
     
-    self.nameLabel.text = userDictionary[@"login"];
-    self.dateLabel.text = nil;
+    self.nameLabel.text = user.name;
+    self.dateLabel.text = user.created;
 }
 
 @end

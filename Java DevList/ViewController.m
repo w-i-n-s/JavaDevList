@@ -11,9 +11,8 @@
 
 #import "AppDelegate.h"
 #import "AFNetworking.h"
-
-//Caching
-//#import "NSArray+Cache.h"
+#import "UserProfileViewController.h"
+#import "User.h"
 
 #define kCacheUsersListKey @"CacheUsersListKey"
 
@@ -22,9 +21,6 @@
 @property (strong, nonatomic) AFHTTPSessionManager *sessionManager;
 @property (strong, nonatomic) NSMutableArray *usersList;
 
-//Caching
-//@property (strong, nonatomic) NSMutableArray *idList;
-
 @property (weak, nonatomic) IBOutlet UIView *nonauthView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -32,6 +28,10 @@
 @property (assign, nonatomic) NSUInteger currentPage;
 @property (assign, nonatomic) NSUInteger totalItems;
 @property (assign, nonatomic) BOOL canRequestNextPage;
+
+@property (assign, nonatomic) NSInteger indexOfSelectedRow;
+@property (strong, nonatomic) NSDateFormatter *inDateFormatter;
+@property (strong, nonatomic) NSDateFormatter *outDateFormatter;
 
 @end
 
@@ -45,16 +45,12 @@
     self.usersList = [NSMutableArray array];
     self.canRequestNextPage = YES;
     self.currentPage = 1;
-    //Caching
-    /*
-    NSArray *cachedArray = [[NSArray alloc] initArrayFromCacheWithKey:kCacheUsersListKey];
-    self.usersList = [NSMutableArray arrayWithArray:cachedArray];
     
-    self.idList = [NSMutableArray array];
-    for (NSDictionary *dict in self.usersList) {
-        [self.idList addObject:[dict[@"id"] mutableCopy]];
-    }
-     */
+    self.inDateFormatter = [[NSDateFormatter alloc] init];
+    [self.inDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    
+    self.outDateFormatter = [[NSDateFormatter alloc] init];
+    [self.outDateFormatter setDateFormat:@"EEE, MMM d, ''yy"];
 }
 
 - (void)viewDidLoad {
@@ -91,6 +87,13 @@
             [((AppDelegate *)[UIApplication sharedApplication].delegate) checkGitHubAuth];
             break;
         }
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"UserProfile"]) {
+        UserProfileViewController *vc = [segue destinationViewController];
+        vc.user = self.usersList[self.indexOfSelectedRow];
     }
 }
 
@@ -144,6 +147,36 @@
     }];
 }
 
+- (void)loadUserProfileWithName:(NSString *)userName {
+    __weak __typeof(self)weakSelf = self;
+    NSString *suffix = [NSString stringWithFormat:@"users/%@",userName];
+    [self getDataFromAPIUsingRequestSuffixString:suffix completion:^(NSDictionary *responseObject) {
+        NSArray *array = [weakSelf.usersList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self.name == %@",userName]];
+        
+        if (![array count]) {
+            return;
+        }
+        
+        User *user = array.firstObject;
+        user.email = responseObject[@"email"];
+        if ([user.email isEqual:[NSNull null]]) {
+            user.email = nil;
+        }
+        
+        user.followers = @([responseObject[@"followers"] integerValue]);
+        
+        NSDate *date = [weakSelf.inDateFormatter dateFromString:responseObject[@"created_at"]];
+        user.created = [weakSelf.outDateFormatter stringFromDate:date];
+        
+        user.bio = responseObject[@"bio"];
+        if (!user.bio || [user.bio isEqual:[NSNull null]]) {
+            user.bio = @"";
+        }
+        
+        [weakSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[weakSelf.usersList indexOfObject:user] inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    }];
+}
+
 - (void)getDataFromAPIUsingRequestSuffixString:(NSString *)suffixString completion:(void(^) (NSDictionary *responseObject)) completion{
     
     NSString *urlString = [[@"https://api.github.com/" stringByAppendingString:suffixString] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -164,25 +197,19 @@
     }];
 }
 
+
 #pragma mark Fill results
 
 - (void)addResultsFromList:(NSArray *)array {
-    //TODO: parse to model
-    
-    //Caching
-    /*
+    User *user;
     for (NSDictionary *dict in array) {
-        if (![self.idList containsObject:dict[@"id"]]) {
-            [self.idList addObject:[dict[@"id"] mutableCopy]];
-            [self.usersList addObject:dict];
-        }
+        user = [[User alloc] initWithDictionary:dict];
+        [self.usersList addObject:user];
+        
+        [self loadUserProfileWithName:user.name];
     }
     
-    [self.usersList storeArrayToCacheWithKey:kCacheUsersListKey];
-    */
-    
-    [self.usersList addObjectsFromArray:array];
-    [self.usersList sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"login" ascending:YES]]];
+    [self.usersList sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
     
     [self.tableView reloadData];
     
@@ -199,7 +226,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserTableViewCell" forIndexPath:indexPath];
-    cell.userDictionary = self.usersList[indexPath.row];
+    cell.user = self.usersList[indexPath.row];
     
     if (indexPath.row >= [self.usersList count]-5) {
         [self getNextPageOfUserList];
@@ -209,4 +236,11 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.indexOfSelectedRow = indexPath.row;
+    
+    [self performSegueWithIdentifier:@"UserProfile" sender:self];
+}
+
 @end

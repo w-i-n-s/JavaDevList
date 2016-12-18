@@ -10,6 +10,18 @@
 
 @implementation User
 
+- (instancetype)initWithDictionary:(NSDictionary*)dict {
+    self = [super init];
+    if (self) {
+        self.name = dict[@"login"];
+        self.avatarUrl = dict[@"avatar_url"];
+    }
+    
+    return self;
+}
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@: %p, name: %@>", NSStringFromClass([self class]), self, self.name];
+}
 
 @end

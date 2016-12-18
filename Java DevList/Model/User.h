@@ -11,7 +11,12 @@
 @interface User : NSObject
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *theID;
 @property (strong, nonatomic) NSString *avatarUrl;
+@property (strong, nonatomic) NSString *created;
+@property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSNumber *followers;
+@property (strong, nonatomic) NSString *bio;
+
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 
 @end

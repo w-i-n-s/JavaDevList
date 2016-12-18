@@ -21,12 +21,12 @@
 		2A2EB8041E06A01100A43F5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F11E0693FF00A43F5E /* ViewController.m */; };
 		2A2EB8051E06A01100A43F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7EE1E0693FF00A43F5E /* AppDelegate.m */; };
 		2A2EB8061E06A01100A43F5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7EB1E0693FF00A43F5E /* main.m */; };
-		2A2EB8081E06A01100A43F5E /* libPods-Java DevList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA12CCD6C3DA99844F04766 /* libPods-Java DevList.a */; };
 		2A2EB80A1E06A01100A43F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F81E06940000A43F5E /* LaunchScreen.storyboard */; };
 		2A2EB80B1E06A01100A43F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F61E06940000A43F5E /* Assets.xcassets */; };
 		2A2EB80C1E06A01100A43F5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F31E0693FF00A43F5E /* Main.storyboard */; };
+		2A4CEFBF1E071AAC00063B4A /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CEFBE1E071AAC00063B4A /* UserProfileViewController.m */; };
+		2A4CEFC01E071AAC00063B4A /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CEFBE1E071AAC00063B4A /* UserProfileViewController.m */; };
 		2BFDF3DEC17EEE805F6BA398 /* libPods-App Black.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A73A7D37748E6F13F1E412F /* libPods-App Black.a */; };
-		89E7C41C658D585F8E346AF8 /* libPods-Java DevList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA12CCD6C3DA99844F04766 /* libPods-Java DevList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +47,8 @@
 		2A2EB7FB1E06940000A43F5E /* Info Black.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info Black.plist"; sourceTree = "<group>"; };
 		2A2EB8121E06A01100A43F5E /* App Blue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Blue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2EB8141E06A2F200A43F5E /* Info Blue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info Blue.plist"; sourceTree = "<group>"; };
+		2A4CEFBD1E071AAC00063B4A /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		2A4CEFBE1E071AAC00063B4A /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		2B6760E77387281ABFAD0D96 /* Pods-App Black.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Black.release.xcconfig"; path = "Pods/Target Support Files/Pods-App Black/Pods-App Black.release.xcconfig"; sourceTree = "<group>"; };
 		5644C83BFA8A2CCDAB0AD884 /* Pods-App Blue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Blue.release.xcconfig"; path = "Pods/Target Support Files/Pods-App Blue/Pods-App Blue.release.xcconfig"; sourceTree = "<group>"; };
 		6A73A7D37748E6F13F1E412F /* libPods-App Black.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App Black.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89E7C41C658D585F8E346AF8 /* libPods-Java DevList.a in Frameworks */,
 				2BFDF3DEC17EEE805F6BA398 /* libPods-App Black.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A2EB8081E06A01100A43F5E /* libPods-Java DevList.a in Frameworks */,
 				03968BB8EE63D148F0423541 /* libPods-App Blue.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +125,8 @@
 				2A2EB7F11E0693FF00A43F5E /* ViewController.m */,
 				2A1FACA11E06F54300C9497D /* UserTableViewCell.h */,
 				2A1FACA21E06F54300C9497D /* UserTableViewCell.m */,
+				2A4CEFBD1E071AAC00063B4A /* UserProfileViewController.h */,
+				2A4CEFBE1E071AAC00063B4A /* UserProfileViewController.m */,
 				2A2EB7F31E0693FF00A43F5E /* Main.storyboard */,
 				2A2EB7F61E06940000A43F5E /* Assets.xcassets */,
 				2A2EB7F81E06940000A43F5E /* LaunchScreen.storyboard */,
@@ -271,7 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		2A2EB80D1E06A01100A43F5E /* [CP] Embed Pods Frameworks */ = {
@@ -346,7 +348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -359,6 +361,7 @@
 				2A1FACA81E07049100C9497D /* User.m in Sources */,
 				2A1FACA31E06F54400C9497D /* UserTableViewCell.m in Sources */,
 				2A2EB7F21E0693FF00A43F5E /* ViewController.m in Sources */,
+				2A4CEFBF1E071AAC00063B4A /* UserProfileViewController.m in Sources */,
 				2A2EB7EF1E0693FF00A43F5E /* AppDelegate.m in Sources */,
 				2A2EB7EC1E0693FF00A43F5E /* main.m in Sources */,
 			);
@@ -371,6 +374,7 @@
 				2A1FACA91E07049100C9497D /* User.m in Sources */,
 				2A1FACA41E06F54A00C9497D /* UserTableViewCell.m in Sources */,
 				2A2EB8041E06A01100A43F5E /* ViewController.m in Sources */,
+				2A4CEFC01E071AAC00063B4A /* UserProfileViewController.m in Sources */,
 				2A2EB8051E06A01100A43F5E /* AppDelegate.m in Sources */,
 				2A2EB8061E06A01100A43F5E /* main.m in Sources */,
 			);
@@ -498,6 +502,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GitHub.Java-DevList";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -511,6 +516,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GitHub.Java-DevList";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
