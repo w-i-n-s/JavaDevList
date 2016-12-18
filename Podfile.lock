@@ -14,6 +14,8 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AFOAuth2Manager (3.0.0):
+    - AFNetworking/NSURLSession (~> 3.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -21,14 +23,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AFOAuth2Manager (~> 3.0)
   - SDWebImage (~> 3.8)
   - THCache (~> 0.9.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFOAuth2Manager: 0566da1be64883e339813d411229fdc9a84dab7c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   THCache: 7e23f78df992f8f3021fbb10b80f8371082e7276
 
-PODFILE CHECKSUM: 4c119d9874fbac9237e355fce9f7cbf92948f2ac
+PODFILE CHECKSUM: 32f1cd88aefd462b00b6afc015d9a058ea98c8b1
 
 COCOAPODS: 1.0.1

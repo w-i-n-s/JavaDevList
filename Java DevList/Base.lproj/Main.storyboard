@@ -17,12 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r19-j5-9N9" userLabel="Nonauth View">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-iL-btH">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="UVq-Ft-bkI"/>
+                                            <constraint firstAttribute="width" constant="75" id="pnd-Lq-0J5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to authorize" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0N-u4-stG">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="mH3-LP-8LW"/>
+                                            <constraint firstAttribute="width" constant="100" id="z2c-5c-crS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="iRp-iL-btH" firstAttribute="centerX" secondItem="r19-j5-9N9" secondAttribute="centerX" id="LOF-xi-2o9"/>
+                                    <constraint firstItem="C0N-u4-stG" firstAttribute="top" secondItem="iRp-iL-btH" secondAttribute="bottom" constant="39" id="YPn-Bs-yys"/>
+                                    <constraint firstItem="C0N-u4-stG" firstAttribute="centerX" secondItem="iRp-iL-btH" secondAttribute="centerX" id="c5X-ds-5nE"/>
+                                    <constraint firstItem="iRp-iL-btH" firstAttribute="centerY" secondItem="r19-j5-9N9" secondAttribute="centerY" id="uSC-Yi-Rx8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r19-j5-9N9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M4a-2S-1Bp"/>
+                            <constraint firstItem="r19-j5-9N9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cOY-Uo-QTt"/>
+                            <constraint firstItem="r19-j5-9N9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ebJ-Pg-fXG"/>
+                            <constraint firstItem="r19-j5-9N9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jbM-d4-oBw"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="nonauthView" destination="r19-j5-9N9" id="JQA-cS-04w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="74" height="74"/>
+    </resources>
 </document>

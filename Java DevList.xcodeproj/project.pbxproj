@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03968BB8EE63D148F0423541 /* libPods-App Blue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FF1C1FBF925FF74FB536D1 /* libPods-App Blue.a */; };
 		2A2EB7EC1E0693FF00A43F5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7EB1E0693FF00A43F5E /* main.m */; };
 		2A2EB7EF1E0693FF00A43F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7EE1E0693FF00A43F5E /* AppDelegate.m */; };
 		2A2EB7F21E0693FF00A43F5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F11E0693FF00A43F5E /* ViewController.m */; };
@@ -20,7 +21,9 @@
 		2A2EB80A1E06A01100A43F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F81E06940000A43F5E /* LaunchScreen.storyboard */; };
 		2A2EB80B1E06A01100A43F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F61E06940000A43F5E /* Assets.xcassets */; };
 		2A2EB80C1E06A01100A43F5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F31E0693FF00A43F5E /* Main.storyboard */; };
-		2A2EB8151E06A2F200A43F5E /* Info Blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB8141E06A2F200A43F5E /* Info Blue.plist */; };
+		2A9BF9E61E06D06900E57F49 /* Info Black.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB7FB1E06940000A43F5E /* Info Black.plist */; };
+		2A9BF9E71E06D06D00E57F49 /* Info Blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2EB8141E06A2F200A43F5E /* Info Blue.plist */; };
+		2BFDF3DEC17EEE805F6BA398 /* libPods-App Black.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A73A7D37748E6F13F1E412F /* libPods-App Black.a */; };
 		89E7C41C658D585F8E346AF8 /* libPods-Java DevList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA12CCD6C3DA99844F04766 /* libPods-Java DevList.a */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +41,12 @@
 		2A2EB7FB1E06940000A43F5E /* Info Black.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info Black.plist"; sourceTree = "<group>"; };
 		2A2EB8121E06A01100A43F5E /* App Blue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Blue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2EB8141E06A2F200A43F5E /* Info Blue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info Blue.plist"; sourceTree = "<group>"; };
-		2E276AE9BCCE844E95F069EA /* Pods-Java DevList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Java DevList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Java DevList/Pods-Java DevList.debug.xcconfig"; sourceTree = "<group>"; };
-		A7FFCB947B0261E7977B7332 /* Pods-Java DevList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Java DevList.release.xcconfig"; path = "Pods/Target Support Files/Pods-Java DevList/Pods-Java DevList.release.xcconfig"; sourceTree = "<group>"; };
+		2B6760E77387281ABFAD0D96 /* Pods-App Black.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Black.release.xcconfig"; path = "Pods/Target Support Files/Pods-App Black/Pods-App Black.release.xcconfig"; sourceTree = "<group>"; };
+		5644C83BFA8A2CCDAB0AD884 /* Pods-App Blue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Blue.release.xcconfig"; path = "Pods/Target Support Files/Pods-App Blue/Pods-App Blue.release.xcconfig"; sourceTree = "<group>"; };
+		6A73A7D37748E6F13F1E412F /* libPods-App Black.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App Black.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97FF1C1FBF925FF74FB536D1 /* libPods-App Blue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App Blue.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9857887E4534798C27619BE /* Pods-App Blue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Blue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App Blue/Pods-App Blue.debug.xcconfig"; sourceTree = "<group>"; };
+		D316406840EA292C6BEA5D24 /* Pods-App Black.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Black.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App Black/Pods-App Black.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E7C41C658D585F8E346AF8 /* libPods-Java DevList.a in Frameworks */,
+				2BFDF3DEC17EEE805F6BA398 /* libPods-App Black.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A2EB8081E06A01100A43F5E /* libPods-Java DevList.a in Frameworks */,
+				03968BB8EE63D148F0423541 /* libPods-App Blue.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				0FA12CCD6C3DA99844F04766 /* libPods-Java DevList.a */,
+				6A73A7D37748E6F13F1E412F /* libPods-App Black.a */,
+				97FF1C1FBF925FF74FB536D1 /* libPods-App Blue.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,8 +128,10 @@
 		AC530DFEF8F7C8C1B0639C49 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2E276AE9BCCE844E95F069EA /* Pods-Java DevList.debug.xcconfig */,
-				A7FFCB947B0261E7977B7332 /* Pods-Java DevList.release.xcconfig */,
+				D316406840EA292C6BEA5D24 /* Pods-App Black.debug.xcconfig */,
+				2B6760E77387281ABFAD0D96 /* Pods-App Black.release.xcconfig */,
+				B9857887E4534798C27619BE /* Pods-App Blue.debug.xcconfig */,
+				5644C83BFA8A2CCDAB0AD884 /* Pods-App Blue.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -210,8 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A2EB7FA1E06940000A43F5E /* LaunchScreen.storyboard in Resources */,
-				2A2EB8151E06A2F200A43F5E /* Info Blue.plist in Resources */,
 				2A2EB7F71E06940000A43F5E /* Assets.xcassets in Resources */,
+				2A9BF9E61E06D06900E57F49 /* Info Black.plist in Resources */,
 				2A2EB7F51E0693FF00A43F5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A2EB80A1E06A01100A43F5E /* LaunchScreen.storyboard in Resources */,
+				2A9BF9E71E06D06D00E57F49 /* Info Blue.plist in Resources */,
 				2A2EB80B1E06A01100A43F5E /* Assets.xcassets in Resources */,
 				2A2EB80C1E06A01100A43F5E /* Main.storyboard in Resources */,
 			);
@@ -256,7 +270,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Java DevList/Pods-Java DevList-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App Blue/Pods-App Blue-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2A2EB80E1E06A01100A43F5E /* [CP] Copy Pods Resources */ = {
@@ -271,7 +285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Java DevList/Pods-Java DevList-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App Blue/Pods-App Blue-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		833F429C3A7DA3B824B188DE /* [CP] Embed Pods Frameworks */ = {
@@ -286,7 +300,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Java DevList/Pods-Java DevList-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App Black/Pods-App Black-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CA0F8D0E2BBD59D9068B7B44 /* [CP] Copy Pods Resources */ = {
@@ -301,7 +315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Java DevList/Pods-Java DevList-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App Black/Pods-App Black-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EF71C022EACB56B3661967BA /* [CP] Check Pods Manifest.lock */ = {
@@ -456,7 +470,7 @@
 		};
 		2A2EB7FF1E06940000A43F5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E276AE9BCCE844E95F069EA /* Pods-Java DevList.debug.xcconfig */;
+			baseConfigurationReference = D316406840EA292C6BEA5D24 /* Pods-App Black.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Black";
 				DEVELOPMENT_TEAM = C873229R2B;
@@ -469,7 +483,7 @@
 		};
 		2A2EB8001E06940000A43F5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7FFCB947B0261E7977B7332 /* Pods-Java DevList.release.xcconfig */;
+			baseConfigurationReference = 2B6760E77387281ABFAD0D96 /* Pods-App Black.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Black";
 				DEVELOPMENT_TEAM = C873229R2B;
@@ -482,7 +496,7 @@
 		};
 		2A2EB8101E06A01100A43F5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E276AE9BCCE844E95F069EA /* Pods-Java DevList.debug.xcconfig */;
+			baseConfigurationReference = B9857887E4534798C27619BE /* Pods-App Blue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Blue";
 				DEVELOPMENT_TEAM = C873229R2B;
@@ -500,7 +514,7 @@
 		};
 		2A2EB8111E06A01100A43F5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7FFCB947B0261E7977B7332 /* Pods-Java DevList.release.xcconfig */;
+			baseConfigurationReference = 5644C83BFA8A2CCDAB0AD884 /* Pods-App Blue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Blue";
 				DEVELOPMENT_TEAM = C873229R2B;

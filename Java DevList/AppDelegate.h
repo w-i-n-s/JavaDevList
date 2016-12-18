@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const kNotificationsAuthStateDidChange;
+
+extern NSString *const kUserDefaultsSuiteName;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)checkGitHubAuth;
+- (NSString *)authToken;
 
 @end
 
