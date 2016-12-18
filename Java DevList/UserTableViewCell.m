@@ -22,6 +22,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.avatarImageView.layer.borderWidth = 5;
+    self.avatarImageView.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
     [self.avatarImageView setShowActivityIndicatorView:YES];
     [self.avatarImageView setIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 }

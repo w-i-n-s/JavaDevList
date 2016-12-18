@@ -11,7 +11,9 @@
 
 #import "AppDelegate.h"
 #import "AFNetworking.h"
-#import "NSArray+Cache.h"
+
+//Caching
+//#import "NSArray+Cache.h"
 
 #define kCacheUsersListKey @"CacheUsersListKey"
 
@@ -20,8 +22,16 @@
 @property (strong, nonatomic) AFHTTPSessionManager *sessionManager;
 @property (strong, nonatomic) NSMutableArray *usersList;
 
+//Caching
+//@property (strong, nonatomic) NSMutableArray *idList;
+
 @property (weak, nonatomic) IBOutlet UIView *nonauthView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+//pagination
+@property (assign, nonatomic) NSUInteger currentPage;
+@property (assign, nonatomic) NSUInteger totalItems;
+@property (assign, nonatomic) BOOL canRequestNextPage;
 
 @end
 
@@ -32,8 +42,19 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.usersList = [NSMutableArray array];
+    self.canRequestNextPage = YES;
+    self.currentPage = 1;
+    //Caching
+    /*
     NSArray *cachedArray = [[NSArray alloc] initArrayFromCacheWithKey:kCacheUsersListKey];
     self.usersList = [NSMutableArray arrayWithArray:cachedArray];
+    
+    self.idList = [NSMutableArray array];
+    for (NSDictionary *dict in self.usersList) {
+        [self.idList addObject:[dict[@"id"] mutableCopy]];
+    }
+     */
 }
 
 - (void)viewDidLoad {
@@ -98,39 +119,29 @@
         return;
     }
     
-    [self getUserList];
+    [self getNextPageOfUserList];
 }
 
-- (void)getUserList {
+- (void)getNextPageOfUserList {
+    if (!self.canRequestNextPage) {
+        return;
+    }
+    
+    if (self.totalItems && (self.currentPage*10 > self.totalItems)) {
+        return;
+    }
+    
+    self.canRequestNextPage = NO;
+    
     __weak __typeof(self)weakSelf = self;
-    NSString *suffix = [NSString stringWithFormat:@"search/users?q=language:javascript&per_page=10&page=0"];
+    NSString *suffix = [NSString stringWithFormat:@"search/users?q=language:javascript&per_page=10&page=%d",self.currentPage];
     [self getDataFromAPIUsingRequestSuffixString:suffix completion:^(NSDictionary *responseObject) {
+        weakSelf.totalItems = [responseObject[@"total_count"] integerValue];
+        weakSelf.currentPage++;
+        weakSelf.canRequestNextPage = YES;
+        
         [weakSelf addResultsFromList:responseObject[@"items"]];
-        /*
-        {
-            "avatar_url" = "https://avatars.githubusercontent.com/u/110953?v=3";
-            "events_url" = "https://api.github.com/users/addyosmani/events{/privacy}";
-            "followers_url" = "https://api.github.com/users/addyosmani/followers";
-            "following_url" = "https://api.github.com/users/addyosmani/following{/other_user}";
-            "gists_url" = "https://api.github.com/users/addyosmani/gists{/gist_id}";
-            "gravatar_id" = "";
-            "html_url" = "https://github.com/addyosmani";
-            id = 110953;
-            login = addyosmani;
-            "organizations_url" = "https://api.github.com/users/addyosmani/orgs";
-            "received_events_url" = "https://api.github.com/users/addyosmani/received_events";
-            "repos_url" = "https://api.github.com/users/addyosmani/repos";
-            score = 1;
-            "site_admin" = 0;
-            "starred_url" = "https://api.github.com/users/addyosmani/starred{/owner}{/repo}";
-            "subscriptions_url" = "https://api.github.com/users/addyosmani/subscriptions";
-            type = User;
-            url = "https://api.github.com/users/addyosmani";
-        }
-        */
     }];
-    
-    
 }
 
 - (void)getDataFromAPIUsingRequestSuffixString:(NSString *)suffixString completion:(void(^) (NSDictionary *responseObject)) completion{
@@ -157,8 +168,26 @@
 
 - (void)addResultsFromList:(NSArray *)array {
     //TODO: parse to model
+    
+    //Caching
+    /*
+    for (NSDictionary *dict in array) {
+        if (![self.idList containsObject:dict[@"id"]]) {
+            [self.idList addObject:[dict[@"id"] mutableCopy]];
+            [self.usersList addObject:dict];
+        }
+    }
+    
+    [self.usersList storeArrayToCacheWithKey:kCacheUsersListKey];
+    */
+    
     [self.usersList addObjectsFromArray:array];
+    [self.usersList sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"login" ascending:YES]]];
+    
     [self.tableView reloadData];
+    
+    //!!!: You said "Bonus: order by username", but without next line I have no idea how to user can see this list
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 }
 
 
@@ -171,6 +200,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserTableViewCell" forIndexPath:indexPath];
     cell.userDictionary = self.usersList[indexPath.row];
+    
+    if (indexPath.row >= [self.usersList count]-5) {
+        [self getNextPageOfUserList];
+    }
     
     return cell;
 }

@@ -10,6 +10,8 @@
 		03968BB8EE63D148F0423541 /* libPods-App Blue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FF1C1FBF925FF74FB536D1 /* libPods-App Blue.a */; };
 		2A1FACA31E06F54400C9497D /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1FACA21E06F54300C9497D /* UserTableViewCell.m */; };
 		2A1FACA41E06F54A00C9497D /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1FACA21E06F54300C9497D /* UserTableViewCell.m */; };
+		2A1FACA81E07049100C9497D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1FACA71E07049100C9497D /* User.m */; };
+		2A1FACA91E07049100C9497D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1FACA71E07049100C9497D /* User.m */; };
 		2A2EB7EC1E0693FF00A43F5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7EB1E0693FF00A43F5E /* main.m */; };
 		2A2EB7EF1E0693FF00A43F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7EE1E0693FF00A43F5E /* AppDelegate.m */; };
 		2A2EB7F21E0693FF00A43F5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EB7F11E0693FF00A43F5E /* ViewController.m */; };
@@ -31,6 +33,8 @@
 		0FA12CCD6C3DA99844F04766 /* libPods-Java DevList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Java DevList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1FACA11E06F54300C9497D /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
 		2A1FACA21E06F54300C9497D /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
+		2A1FACA61E07049100C9497D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		2A1FACA71E07049100C9497D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		2A2EB7E71E0693FF00A43F5E /* App Black.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Black.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2EB7EB1E0693FF00A43F5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A2EB7ED1E0693FF00A43F5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2A1FACA51E07046200C9497D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A1FACA61E07049100C9497D /* User.h */,
+				2A1FACA71E07049100C9497D /* User.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2A2EB7DE1E0693FE00A43F5E = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,7 @@
 		2A2EB7E91E0693FF00A43F5E /* Java DevList */ = {
 			isa = PBXGroup;
 			children = (
+				2A1FACA51E07046200C9497D /* Model */,
 				2A2EB7ED1E0693FF00A43F5E /* AppDelegate.h */,
 				2A2EB7EE1E0693FF00A43F5E /* AppDelegate.m */,
 				2A2EB7F01E0693FF00A43F5E /* ViewController.h */,
@@ -342,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1FACA81E07049100C9497D /* User.m in Sources */,
 				2A1FACA31E06F54400C9497D /* UserTableViewCell.m in Sources */,
 				2A2EB7F21E0693FF00A43F5E /* ViewController.m in Sources */,
 				2A2EB7EF1E0693FF00A43F5E /* AppDelegate.m in Sources */,
@@ -353,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1FACA91E07049100C9497D /* User.m in Sources */,
 				2A1FACA41E06F54A00C9497D /* UserTableViewCell.m in Sources */,
 				2A2EB8041E06A01100A43F5E /* ViewController.m in Sources */,
 				2A2EB8051E06A01100A43F5E /* AppDelegate.m in Sources */,
