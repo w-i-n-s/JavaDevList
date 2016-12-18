@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,6 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQ0-2h-YV6">
+                                <color key="backgroundColor" red="0.22745098039215686" green="0.47450980392156861" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-SL-sIQ">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="Ui7-wO-Aa6"/>
@@ -25,10 +29,14 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eQ0-2h-YV6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4JJ-pE-Jf5"/>
+                            <constraint firstItem="eQ0-2h-YV6" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1:2" id="Eg5-r8-IAY"/>
                             <constraint firstItem="1MR-SL-sIQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bZB-mL-OHa"/>
                             <constraint firstItem="1MR-SL-sIQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="buL-Fy-dpd"/>
+                            <constraint firstItem="eQ0-2h-YV6" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="dSu-88-62V"/>
+                            <constraint firstItem="eQ0-2h-YV6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" multiplier="3:2" id="och-rr-Gjk"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="75" height="75"/>
+        <image name="icon" width="74" height="74"/>
     </resources>
 </document>
