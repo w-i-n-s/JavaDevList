@@ -6,7 +6,6 @@ def all_targets
 	pod 'AFNetworking'
     pod 'AFOAuth2Manager', '~> 3.0'
 	pod 'SDWebImage', '~> 3.8'
-    pod 'THCache', '~> 0.9.1'
 end
 
 target 'App Black' do

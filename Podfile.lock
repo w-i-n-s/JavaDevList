@@ -19,20 +19,17 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - THCache (0.9.1)
 
 DEPENDENCIES:
   - AFNetworking
   - AFOAuth2Manager (~> 3.0)
   - SDWebImage (~> 3.8)
-  - THCache (~> 0.9.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AFOAuth2Manager: 0566da1be64883e339813d411229fdc9a84dab7c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  THCache: 7e23f78df992f8f3021fbb10b80f8371082e7276
 
-PODFILE CHECKSUM: 861c88b34d9e129e81e503900d24ec3f328ab928
+PODFILE CHECKSUM: 8c53bf6c7f4064c945574691108a102dd31f6d87
 
 COCOAPODS: 1.1.1
