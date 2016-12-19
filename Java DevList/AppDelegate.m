@@ -12,8 +12,6 @@
 
 @interface AppDelegate ()
 
-
-
 @end
 
 @implementation AppDelegate
@@ -21,10 +19,6 @@
 #define kGitHubClientId     @"b8768c36af0fd5955a39"
 #define kGitHubSecret       @"4ef0254d410860c4cb0bf3a898172f1767c922bf"
 #define kGitHubRedirectUrl  @"javadevlist://githubback"
-
-NSString *const kNotificationsAuthStateDidChange = @"NotificationsAuthStateDidChange";
-NSString *const kUserDefaultsSuiteName = @"com.umwerk.javadevlist";
-NSString *const kTokenString = @"GitHubToken";
 
 #pragma mark - Lifecycle
 
@@ -91,7 +85,7 @@ NSString *const kTokenString = @"GitHubToken";
 
 - (NSString *)authToken {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:kUserDefaultsSuiteName];
-    return [userDefaults valueForKey:kTokenString];
+    return [userDefaults valueForKey:kUserDefaultsTokenString];
 }
 
 - (void)getTokenUsingAuthCodeString:(NSString *)authCodeString completion:(void(^) (NSError *error)) completion{
@@ -106,7 +100,7 @@ NSString *const kTokenString = @"GitHubToken";
     //__weak __typeof(self)weakSelf = self;
     [OAuth2Manager authenticateUsingOAuthWithURLString:@"https://github.com/login/oauth/access_token" parameters:params success:^(AFOAuthCredential *credential) {
         NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:kUserDefaultsSuiteName];
-        [userDefaults setObject:credential.accessToken forKey:kTokenString];
+        [userDefaults setObject:credential.accessToken forKey:kUserDefaultsTokenString];
         [userDefaults synchronize];
         
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationsAuthStateDidChange object:nil];

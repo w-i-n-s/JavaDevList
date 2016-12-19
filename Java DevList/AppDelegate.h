@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-extern NSString *const kNotificationsAuthStateDidChange;
-
-extern NSString *const kUserDefaultsSuiteName;
+#import "Config.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

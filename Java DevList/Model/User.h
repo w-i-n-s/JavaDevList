@@ -18,5 +18,6 @@
 @property (strong, nonatomic) NSString *bio;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+- (NSDictionary *)dictionaryValue;
 
 @end

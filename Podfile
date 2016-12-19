@@ -15,3 +15,7 @@ end
 target 'App Blue' do
     all_targets
 end
+
+target 'RandomDev' do
+    pod 'SDWebImage', '~> 3.8'
+end

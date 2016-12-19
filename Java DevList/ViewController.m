@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "UserProfileViewController.h"
 #import "User.h"
+#include <stdlib.h>
 
 #define kCacheUsersListKey @"CacheUsersListKey"
 
@@ -215,6 +216,14 @@
     
     //!!!: You said "Bonus: order by username", but without next line I have no idea how to user can see this list
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    
+    //prepare to transfer to Today ext.
+    user = self.usersList[arc4random_uniform([self.usersList count])];
+    NSDictionary *dict = [user dictionaryValue];
+    
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:kUserDefaultsSuiteName];
+    [userDefaults setObject:dict forKey:kUserDefaultsRandomUser];
+    [userDefaults synchronize];
 }
 
 
